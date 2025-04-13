@@ -1,46 +1,160 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Aakash-portfolio</title>
-        <link rel="stylesheet" href="css/style.css">
-
-    </head>
-    <body>   
-       <div id="header">  
-        <div class="container">
-            <nav>
-                <h1><a href="index.html" class="none"><span class="name">Aakash</span>Balamurugan</h1></a> 
-                <ul>
-                    <li><a href="index.html">HOME </a></li>
-                    <li><a href="about.html">ABOUT</a></li> 
-                    <li><a href="project.html">PROJECT</a></li> 
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aakash Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'media',
+        theme: {
+          extend: {
+            animation: {
+              fadeIn: "fadeIn 1s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: {
+                from: { opacity: 0 },
+                to: { opacity: 1 },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 mb-24 md:mb-32">
+           <!-- Header -->
+           <header class="bg-gray-100 dark:bg-gray-800 py-6">
+            <nav class="flex justify-between items-center px-4">
+              <h1 class="text-2xl font-bold">
+                <a href="#" class="text-black dark:text-white no-underline">
+                  <span class="text-blue-600 dark:text-blue-400">Aakash</span>Balamurugan
+                </a>
+              </h1>
+              <div class="md:hidden">
+                <button id="menuToggle" class="focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+              <ul id="navMenu" class="hidden md:flex gap-6 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-blue-600">HOME</a></li>
+                <li><a href="project.html" class="hover:text-blue-600">PROJECT</a></li>
+                <li><a href="games.html" class="hover:text-blue-600">MINI-GAMES</a></li>
+    
+            </ul>
             </nav>
-        </div> 
-     </div>
-     <div class="intro">
-        <img src="img/aakash.png" alt="aakash" width="170px" style="justify-self: center;">
-        <p>Hey, I am <span class="aakash"> Aakash balamurugan</span><br><span class="name">a student</span><br>
-         currently studing software developement at Freshworks sts software Academy</p> 
-          <br><br>
-         <p>Tech stack I use:</p>
-         <div class="logo">
-         <img src="img/logo/html-5.png" alt="html">
-         <img src="img/logo/css3.png" alt="css">
-         <img src="img/logo/java-script.png" alt="JS">
-         <img src="img/logo/java-logo.png" alt="Java">
-        <img src="data:image/png;base64,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" 
-        alt="mysql">
-         </div>
-         </div>
-         <p class="intro">Know more <a href="about.html">about me</a>!!</p>
-         <hr>
-         <footer>
-           <a href="https://github.com/Aakashbalamurugan" target="_blank"> <img src="img/logo/github.png" alt="git"></a>
-           
-            <a href="https://www.linkedin.com/in/aakash-balamurugan-b6694124b/" target="_blank"><img src="img/logo/linkedin.png" alt="linkedin"></a>
-            <a href="mailto:aakashbala205@gmail.com" target="_blank"><img src="img/logo/gmail.png" alt="gmail"></a>
-         </footer>
+            <ul id="mobileNavMenu" class="md:hidden hidden flex-col items-center mt-4 gap-4 text-sm font-medium px-4">
+              <li><a href="index.html" class="hover:text-blue-600">HOME</a></li>
+              <li><a href="project.html" class="hover:text-blue-600">PROJECT</a></li>
+              <li><a href="games.html" class="hover:text-blue-600">MINI-GAMES</a></li>
+    
+            </ul>
+          </header>
 
-</div> 
-    </body>
-</html> 
+      <!-- Intro Section -->
+      <section class="mt-10 text-center animate-fadeIn px-4">
+        <img src="img/aakash.png" alt="Aakash" class="mx-auto w-40 rounded-full mb-6" />
+        <p class="text-lg">
+          Hey, I am <span class="font-semibold text-blue-600 dark:text-blue-400">Aakash Balamurugan</span><br />
+          <span class="text-gray-700 dark:text-gray-300">a Graduate Engineer at Freshworks</span><br />
+          and a proud native of Puducherry, focuses on developing and managing robust web applications. My technical curiosity is particularly piqued by the dynamic fields of cloud computing, artificial intelligence, and machine learning, and I am continuously expanding my knowledge in these areas.
+        </p>
+      </section>
+<!-- Tech Stack -->
+<section class="mt-12 text-center animate-fadeIn px-4">
+    <h2 class="text-xl font-semibold mb-6">Tech stack I use:</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">JavaScript</p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">Java (Spring Boot)</p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">Python</p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">MySQL</p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">Ruby</p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">Kotlin</p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">Docker</p>
+      </div>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+        <p class="font-medium text-blue-600 dark:text-blue-400">AWS</p>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Languages Section -->
+<section class="mt-12 text-center animate-fadeIn px-4">
+    <h2 class="text-xl font-semibold mb-6">Languages I Know:</h2>
+    <div class="flex justify-center">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-lg">
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow flex items-center justify-center">
+          <p class="font-medium text-blue-600 dark:text-blue-400">Tamil</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow flex items-center justify-center">
+          <p class="font-medium text-blue-600 dark:text-blue-400">English</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow flex items-center justify-center">
+          <p class="font-medium text-blue-600 dark:text-blue-400">French</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Work Experience -->
+      <section class="mt-12 animate-fadeIn px-4">
+        <h2 class="text-3xl font-bold mb-6 text-center">Career</h2>
+        <div class="space-y-6 text-base">
+          <div>
+            <h3 class="font-bold">Freshworks</h3>
+            <p><strong>Back-end Developer (Full-time)</strong><br />Feb 2025 – Present</p>
+          </div>
+          <div>
+            <p><strong>Software Engineer (Internship)</strong><br />Dec 2023 – Jan 2025 · 1 yr 2 mos</p>
+          </div>
+          <div>
+            <p><strong>Student Trainee – Freshworks STS Software Academy</strong><br />Sep 2022 – Nov 2023 · 1 yr 3 mos</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Know More -->
+      <p class="text-center mt-10 text-sm animate-fadeIn px-4">Know more <a href="about.html" class="text-blue-600 underline">about me</a>!!</p>
+
+      <hr class="my-10" />
+
+      <!-- Footer -->
+      <footer class="flex justify-center gap-6 animate-fadeIn">
+        <a href="https://github.com/Aakashbalamurugan" target="_blank" class="hover:underline text-sm">GitHub</a>
+        <a href="https://www.linkedin.com/in/aakash-balamurugan/" target="_blank" class="hover:underline text-sm">LinkedIn</a>
+        <a href="mailto:aakashbala205@gmail.com" target="_blank" class="hover:underline text-sm">Email</a>
+      </footer>
+    </div>
+
+    <!-- Mobile Nav Toggle Script -->
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileNavMenu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

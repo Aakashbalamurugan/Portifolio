@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aakash - Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'media',
+        theme: {
+          extend: {
+            animation: {
+              fadeIn: "fadeIn 1s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: {
+                from: { opacity: 0 },
+                to: { opacity: 1 },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Header -->
+    <div class="max-w-5xl mx-auto px-4 md:px-6 mb-24 md:mb-32">
+     
+    <header class="bg-gray-100 dark:bg-gray-800 py-6">
+            <nav class="flex justify-between items-center px-4">
+              <h1 class="text-2xl font-bold">
+                <a href="#" class="text-black dark:text-white no-underline">
+                  <span class="text-blue-600 dark:text-blue-400">Aakash</span>Balamurugan
+                </a>
+              </h1>
+              <div class="md:hidden">
+                <button id="menuToggle" class="focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+              <ul id="navMenu" class="hidden md:flex gap-6 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-blue-600">HOME</a></li>
+                <li><a href="project.html" class="hover:text-blue-600">PROJECT</a></li>
+                <li><a href="games.html" class="hover:text-blue-600">MINI-GAMES</a></li>
+    
+            </ul>
+            </nav>
+            <ul id="mobileNavMenu" class="md:hidden hidden flex-col items-center mt-4 gap-4 text-sm font-medium px-4">
+              <li><a href="index.html" class="hover:text-blue-600">HOME</a></li>
+              <li><a href="project.html" class="hover:text-blue-600">PROJECT</a></li>
+              <li><a href="games.html" class="hover:text-blue-600">MINI-GAMES</a></li>
+    
+            </ul>
+          </header>
+    <div class="max-w-4xl mx-auto px-4 md:px-6 py-12">
+      <h1 class="text-3xl font-bold text-center mb-10">Mini Games by Aakash</h1>
+
+      <div class="space-y-8 animate-fadeIn">
+        <!-- Snake Game -->
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow">
+          <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">Snake Game</h2>
+          <p class="mb-4">Classic snake game where the snake grows by eating food and avoids hitting the walls</p>
+          <div class="flex gap-4">
+            <a href="https://github.com/Aakashbalamurugan/snake_game" target="_blank" class="text-blue-600 underline">🔗 GitHub Repo</a>
+            <a href="https://aakashbalamurugan.github.io/snake_game/" target="_blank" class="text-blue-600 underline">▶️ Play Now</a>
+          </div>
+        </div>
+
+        <!-- Tic Tac Toe -->
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow">
+          <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">Tic Tac Toe</h2>
+          <p class="mb-4">A fun two-player game where Xs and Os compete to get three in a row.
+            this a game were there is no draw, one player will win for sure.</p>
+          </p>
+          <div class="flex gap-4">
+            <a href="https://github.com/Aakashbalamurugan/tic-tac-toe-game" target="_blank" class="text-blue-600 underline">🔗 GitHub Repo</a>
+            <a href="https://aakashbalamurugan.github.io/tic-tac-toe-game/" target="_blank" class="text-blue-600 underline">▶️ Play Now</a>
+          </div>
+        </div>
+
+        <!-- Color Picker -->
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow">
+          <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">Color Picker</h2>
+          <p class="mb-4">there are total of 6 levels, each level gets hard,
+            a random color is generated and you have to guess the color name from the given options.</p>
+          <p class="mb-4">The game is designed to test your color recognition skills.</p>
+          </p>
+          <div class="flex gap-4">
+            <a href="https://github.com/Aakashbalamurugan/color-picker" target="_blank" class="text-blue-600 underline">🔗 GitHub Repo</a>
+            <a href="https://aakashbalamurugan.github.io/color-picker/" target="_blank" class="text-blue-600 underline">▶️ Try It</a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="flex justify-center gap-6 mt-12 animate-fadeIn">
+        <a href="https://github.com/Aakashbalamurugan" target="_blank" class="hover:underline text-sm">GitHub</a>
+        <a href="https://www.linkedin.com/in/aakash-balamurugan/" target="_blank" class="hover:underline text-sm">LinkedIn</a>
+        <a href="mailto:aakashbala205@gmail.com" target="_blank" class="hover:underline text-sm">Email</a>
+      </footer>
+    </div>
+    </div>
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileNavMenu");
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      </script>
+  </body>
+</html>

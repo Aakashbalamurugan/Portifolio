@@ -1,43 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aakash Balamurugan - Professional Introduction</title>
-    <style>
-        /* Add your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
-    </style>
-</head>
-<body>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aakash - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'media',
+        theme: {
+          extend: {
+            animation: {
+              fadeIn: "fadeIn 1s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: {
+                from: { opacity: 0 },
+                to: { opacity: 1 },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 mb-24 md:mb-32">
+      <!-- Header -->
+      <header class="bg-gray-100 dark:bg-gray-800 py-6">
+        <nav class="flex justify-between items-center px-4">
+          <h1 class="text-2xl font-bold">
+            <a href="#" class="text-black dark:text-white no-underline">
+              <span class="text-blue-600 dark:text-blue-400">Aakash</span>Balamurugan
+            </a>
+          </h1>
+          <div class="md:hidden">
+            <button id="menuToggle" class="focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+          <ul id="navMenu" class="hidden md:flex gap-6 text-sm font-medium">
+            <li><a href="index.html" class="hover:text-blue-600">HOME</a></li>
+            <li><a href="project.html" class="hover:text-blue-600">PROJECT</a></li>
+            <li><a href="games.html" class="hover:text-blue-600">MINI-GAMES</a></li>
 
-    <div id="header">  
-        <div class="container">
-            <nav>
-                <h1><a href="index.html" class="none"><span class="name">Aakash</span>Balamurugan</h1></a> 
-                <ul>
-                    <li><a href="index.html">HOME </a></li>
-                    <li><a href="about.html">ABOUT</a></li> 
-                    <li><a href="project.html">PROJECT</a></li> 
-            </nav>
-        </div> 
-     </div>
+        </ul>
+        </nav>
+        <ul id="mobileNavMenu" class="md:hidden hidden flex-col items-center mt-4 gap-4 text-sm font-medium px-4">
+          <li><a href="index.html" class="hover:text-blue-600">HOME</a></li>
+          <li><a href="project.html" class="hover:text-blue-600">PROJECT</a></li>
+          <li><a href="games.html" class="hover:text-blue-600">MINI-GAMES</a></li>
 
-</body>
+        </ul>
+      </header>
+
+      <!-- Projects Section -->
+      <main class="px-4 mt-12">
+        <h2 class="text-3xl font-bold text-center mb-10">My Projects</h2>
+
+        <!-- Project Card 1 -->
+        <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow mb-8 animate-fadeIn">
+          <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">BetterMe - Self Development Platform</h3>
+          <p class="mb-2"><strong>Technologies:</strong> Java, MySQL, HTML, Servlet</p>
+          <p class="mb-4">
+            BetterMe is a self-development platform designed to help users grow through structured tasks, journaling, and progress tracking.
+            Built as a full-stack web application combining frontend and backend functionality using Java and Servlets.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <img src="img/screenshots/betterme1.png" alt="BetterMe Screenshot 1" class="rounded-lg w-full">
+            <img src="img/screenshots/betterme2.png" alt="BetterMe Screenshot 2" class="rounded-lg w-full">
+          </div>
+          <a href="https://github.com/Aakashbalamurugan/BetterMe" target="_blank" class="text-blue-600 underline">🔗 View Project on GitHub</a>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow mb-8 animate-fadeIn">
+          <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">Bus Attendance System with Face Recognition</h3>
+          <p class="mb-2"><strong>Technologies:</strong> Python (Keras-Facenet, OpenCV), MySQL, Kotlin (Android)</p>
+          <p class="mb-4">
+            This smart attendance system uses facial recognition to mark student attendance on school/college buses.
+            It leverages the <strong>keras-facenet</strong> deep learning model to extract facial embeddings, providing accurate identification of students even under varying lighting and angles.
+            The backend handles face encoding and comparison using Python and OpenCV, while the Android app built with Kotlin
+            communicates with the backend to automate attendance in real-time.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <img src="img/screenshots/busapp1.png" alt="Bus Attendance App Screenshot 1" class="rounded-lg w-full">
+            <img src="img/screenshots/busapp2.png" alt="Bus Attendance App Screenshot 2" class="rounded-lg w-full">
+          </div>
+          <a href="https://github.com/Aakashbalamurugan/bus_attendance_system" target="_blank" class="text-blue-600 underline">🔗 View Project on GitHub</a>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="flex justify-center gap-6 mt-12 animate-fadeIn">
+        <a href="https://github.com/Aakashbalamurugan" target="_blank" class="hover:underline text-sm">GitHub</a>
+        <a href="https://www.linkedin.com/in/aakash-balamurugan/" target="_blank" class="hover:underline text-sm">LinkedIn</a>
+        <a href="mailto:aakashbala205@gmail.com" target="_blank" class="hover:underline text-sm">Email</a>
+      </footer>
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileNavMenu");
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
