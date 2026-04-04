@@ -38,7 +38,7 @@ export default function Projects() {
           />
         </div>
         <a
-          href="https://github.com/Aakashbalamurugan/BetterMe"
+          href="https://github.com/Akashbalamurugan/BetterMe"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center text-blue-600 dark:text-blue-400 underline py-1"
@@ -75,7 +75,7 @@ export default function Projects() {
           />
         </div>
         <a
-          href="https://github.com/Aakashbalamurugan/bus_attendance_system"
+          href="https://github.com/Aakashbalamurugan/bus-attendence"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center text-blue-600 dark:text-blue-400 underline py-1"
