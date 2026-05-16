@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import About from './pages/About';
@@ -6,11 +5,7 @@ import Games from './pages/Games';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 
-function App() {
-  useEffect(() => {
-    document.documentElement.classList.add('dark');
-  }, []);
-
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -22,5 +17,3 @@ function App() {
     </Routes>
   );
 }
-
-export default App;

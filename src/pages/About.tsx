@@ -1,6 +1,15 @@
 import { useEffect } from 'react';
-
-const base = process.env.PUBLIC_URL || '';
+import {
+  achievements,
+  certifications,
+  interests,
+  languages,
+  site,
+  softSkills,
+} from '../data/site';
+import Section from '../components/Section';
+import SocialLinks from '../components/SocialLinks';
+import Button from '../components/Button';
 
 export default function About() {
   useEffect(() => {
@@ -8,62 +17,106 @@ export default function About() {
   }, []);
 
   return (
-    <div className="mt-8 sm:mt-12 max-w-2xl mx-auto animate-fadeIn w-full min-w-0 px-0">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-5 sm:mb-6 text-balance">Hi there!</h1>
-      <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8 sm:mb-10 [text-wrap:pretty]">
-        I am Aakash Balamurugan, a graduate engineer at Freshworks with a focus on backend systems,
-        quality, and shipping reliable software. I enjoy learning across cloud, AI/ML, and full-stack
-        development.
-      </p>
+    <div className="space-y-10 max-w-3xl">
+      <header className="animate-fade-in-up">
+        <h1 className="font-display text-3xl font-bold text-slate-900 dark:text-white">About</h1>
+        <p className="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+  Hey, I’m Aakash 👋 When I’m not coding, I’m probably on my PS5 grinding
+  story games or playing late-night multiplayer with friends 🎮
+  <br />
+  <br />
+  I love travelling and exploring new places — I’ve already been to most parts
+  of South India, and next on my list is exploring the north-west side of the
+  country.
+  <br />
+  <br />
+  I’m also into random YouTube rabbit holes, good music, aesthetic setups,
+  movies, and trying out apps or gadgets that look interesting for absolutely no
+  reason 😄
+  <br />
+  <br />
+  Most weekends are a mix of gaming, travel planning, relaxing, and getting
+  excited about random new ideas at midnight.
+  <br />
+  <br />
+  The{' '}
+  <a
+    href="/"
+    className="text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+  >
+    home page
+  </a>{' '}
+  has all the serious stuff — experience, tech stack, education, and
+  contributions. This page is more about me outside of work.
+</p>
+      </header>
 
-      <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
-        What I Do Well
-      </h2>
-      <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-8 sm:mb-10 [text-wrap:pretty]">
-        <li>Building and maintaining web applications and microservices</li>
-        <li>CI/CD pipelines, testing with Selenium and Playwright, and stabilizing regression suites</li>
-        <li>Cloud and DevOps tooling (AWS, Docker, Kubernetes workflows)</li>
-      </ul>
+      <Section title="Soft skills">
+        <div className="flex flex-wrap gap-2">
+          {softSkills.map((skill) => (
+            <span key={skill} className="tag">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </Section>
 
-      <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Get in Touch</h2>
-      <p className="mb-6 text-sm sm:text-base break-words">
-        Feel free to mail me at:{' '}
-        <a
-          href="mailto:aakashbala205@gmail.com"
-          className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-block py-1"
-        >
-          aakashbala205@gmail.com
-        </a>
-      </p>
+      <Section title="Certifications">
+        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc pl-5">
+          {certifications.map((c) => (
+            <li key={c}>{c}</li>
+          ))}
+        </ul>
+      </Section>
 
-      <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap py-6">
-        <a
-          href="https://github.com/Aakashbalamurugan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-[48px] min-w-[48px] items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-        >
-          <img src={`${base}/img/logo/github.png`} alt="GitHub" className="w-11 h-11 sm:w-12 sm:h-12 object-contain" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/aakash-balamurugan/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-[48px] min-w-[48px] items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-        >
-          <img
-            src={`${base}/img/logo/linkedin.png`}
-            alt="LinkedIn"
-            className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
-          />
-        </a>
-        <a
-          href="mailto:aakashbala205@gmail.com"
-          className="inline-flex min-h-[48px] min-w-[48px] items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-        >
-          <img src={`${base}/img/logo/gmail.png`} alt="Email" className="w-11 h-11 sm:w-12 sm:h-12 object-contain" />
-        </a>
-      </div>
+      <Section title="Key achievements">
+        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+          {achievements.map((a) => (
+            <li key={a} className="card px-4 py-3">
+              {a}
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section title="Languages">
+        <div className="flex flex-wrap gap-2">
+          {languages.map((lang) => (
+            <span key={lang} className="tag">
+              {lang}
+            </span>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Interests">
+        <div className="flex flex-wrap gap-2">
+          {interests.map((item) => (
+            <span key={item} className="tag">
+              {item}
+            </span>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Connect">
+        <p className="text-slate-600 dark:text-slate-300 mb-4">
+          <a href={site.links.email} className="text-cyan-600 dark:text-cyan-400 hover:underline">
+            {site.email}
+          </a>
+          {' · '}
+          <a href={site.links.phone} className="text-cyan-600 dark:text-cyan-400 hover:underline">
+            {site.phone}
+          </a>
+        </p>
+        <SocialLinks />
+        <p className="mt-6 text-sm text-slate-500">{site.availability}</p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Button href={site.links.github} variant="primary">
+            GitHub
+          </Button>
+        </div>
+      </Section>
     </div>
   );
 }
